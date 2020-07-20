@@ -78,24 +78,26 @@
 
 
     <script type="text/javascript">
-      $('thead .selection').click(function(){
-        $('.selection').prop( 'checked', this.checked );
-      });
+      $( document ).ready(function() {
+        $('thead .selection').click(function(){
+          $('.selection').prop( 'checked', this.checked );
+        });
 
-      // better separate the two different clicks on "remove action" elements
-      // to avoid ugly conditions
-      $('thead .remove-action').click(function(){
-        // parents => search depth in the parents, not just at first level.
-        $('.selection:checked').parents('.product').remove();
-        // it will be included the check input of the thead too, which is useless
-        // ofc: checkbox input in the <thead> will NOT be deleted
+        // better separate the two different clicks on "remove action" elements
+        // to avoid ugly conditions
+        $('thead .remove-action').click(function(){
+          // parents => search depth in the parents, not just at first level.
+          $('.selection:checked').parents('.product').remove();
+          // it will be included the check input of the thead too, which is useless
+          // ofc: checkbox input in the <thead> will NOT be deleted
 
-        // this works too but less aesthetic that the first
-        // $(".product .selection:checked").parent().parent().remove();
-      });
+          // this works too but less aesthetic that the first
+          // $(".product .selection:checked").parent().parent().remove();
+        });
 
-      $('.product .remove-action').click(function() {
-        $(this).closest('.product').remove();
+        $('.product .remove-action').click(function() {
+          $(this).closest('.product').remove();
+        });
       });
     </script>
   </body>

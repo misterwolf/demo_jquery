@@ -13,6 +13,6 @@ in the project folder
 
 ## browse
 
-localhost:3000
+localhost:3000/(*whatever*)
 
 enjoy
